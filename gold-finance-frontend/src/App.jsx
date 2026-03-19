@@ -2,9 +2,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "./auth/AuthContext";
 import Login from "./pages/publicPages/Login";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import ManagerDashboard from "./pages/manager/ManagerDashboard";
-import EmployeeDashboard from "./pages/Employee/EmployeeDashboard";
+// import AdminDashboard from "./pages/admin/AdminDashboard";
+// import ManagerDashboard from "./pages/manager/ManagerDashboard";
+// import EmployeeDashboard from "./pages/Employee/EmployeeDashboard";
 import PrivateRoute from "./routes/PrivateRoute";
 import { ToastProvider } from "./components/ToastContext";
 import HomePage from "./pages/publicPages/HomePage";
