@@ -2,7 +2,7 @@
 import { useDashboardData } from "../hooks/useDashboardData";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import ManagerDashboard from "../pages/manager/ManagerDashboard";
-import EmployeeDashboard from "../pages/Employee/EmployeeDashboard";
+import EmployeeDashboard from "../pages/employee/EmployeeDashboard";
 
 export default function Dashboard({ role }) {
   const {
