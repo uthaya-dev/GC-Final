@@ -2,8 +2,8 @@ import { useState } from "react";
 import DashboardLayout from "../../components/pageLayouts/DashboardLayout";
 import DashboardHeader from "../../components/DashboardHeader";
 import LatestSubmittedSheets from "../../components/LatestSubmittedSheets";
-import CustomerRegistrationPage from "../../pages/Loan/CustomerRegistrationPage";
-import ExistingCustomerLoan from "../../pages/Loan/ExistingCustomerLoan";
+import CustomerRegistrationPage from "../Loan/CustomerRegistrationPage";
+import ExistingCustomerLoan from "../Loan/ExistingCustomerLoan";
 
 export default function EmployeeDashboard({
   todayRates,

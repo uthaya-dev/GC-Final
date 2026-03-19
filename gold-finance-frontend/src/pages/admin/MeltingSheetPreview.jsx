@@ -1,10 +1,10 @@
 // src/pages/sheets/MeltingSheetPreview.jsx
-import React, { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 import { useParams } from "react-router-dom";
-import axios from "../../api/axiosInstance";
+// import axios from "../../api/axiosInstance";
 import DashboardLayout from "../../components/pageLayouts/DashboardLayout";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+// import html2canvas from "html2canvas";
+// import jsPDF from "jspdf";
 import useSheetDetails from "../../hooks/useSheetDetails";
 import useDownloadPDF from "../../hooks/useDownloadPDF";
 import { usePrintSheet } from "../../hooks/usePrintSheet";
@@ -18,7 +18,7 @@ export default function MeltingSheetPreview({ sheetType }) {
   const { handlePrint } = usePrintSheet(printRef);
   const { handleDownloadPDF } = useDownloadPDF(
     printRef,
-    sheet ? `MeltingSheet-${sheet.sheetNumber}.pdf` : "sheet.pdf"
+    sheet ? `MeltingSheet-${sheet.sheetNumber}.pdf` : "sheet.pdf",
   );
 
   if (loading) return <div className="p-4">Loading...</div>;

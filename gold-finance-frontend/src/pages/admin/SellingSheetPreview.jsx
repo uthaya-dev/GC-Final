@@ -1,5 +1,5 @@
 // src/pages/sheets/SellingSheetPreview.jsx
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import DashboardLayout from "../../components/pageLayouts/DashboardLayout";
 import useSheetDetails from "../../hooks/useSheetDetails";
@@ -14,7 +14,7 @@ export default function SellingSheetPreview({ sheetType }) {
   const { handlePrint } = usePrintSheet(printRef);
   const { handleDownloadPDF } = useDownloadPDF(
     printRef,
-    sheet ? `SellingSheet-${sheet.sheetNumber}.pdf` : "sheet.pdf"
+    sheet ? `SellingSheet-${sheet.sheetNumber}.pdf` : "sheet.pdf",
   );
 
   if (loading) return <div className="p-4">Loading...</div>;
