@@ -20,13 +20,16 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/signin", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${process.env.VITE_API_BASE_URL}/api/auth/signin`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
         },
-        body: JSON.stringify({ email, password }),
-      });
+      );
 
       const dataWithToken = await response.json();
       const { user, token } = dataWithToken;
@@ -137,7 +140,7 @@ export default function Login() {
                       "Content-Type": "application/json",
                     },
                     body: JSON.stringify({ tokenId }),
-                  }
+                  },
                 );
 
                 const data = await res.json();
