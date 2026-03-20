@@ -178,7 +178,7 @@ export default function Login() {
               className="text-blue-600 underline hover:text-blue-800"
               onClick={() => navigate("/signup")}
             >
-              Register hereeee
+              Register here
             </button>
           </p>
           <p
