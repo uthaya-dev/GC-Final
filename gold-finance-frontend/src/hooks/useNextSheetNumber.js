@@ -9,14 +9,14 @@ export const useNextSheetNumber = (TypeOfSheet = "BuyingSheet") => {
     try {
       const endpoint =
         TypeOfSheet === "BuyingSheet"
-          ? "/sheet/buying-sheet/next-number"
+          ? "/api/sheet/buying-sheet/next-number"
           : TypeOfSheet === "SellingSheet"
-          ? "/sheet/selling-sheet/next-number"
-          : TypeOfSheet === "MeltingSheet"
-          ? "/sheet/melting-sheet/next-number"
-          : TypeOfSheet === "FinanceSheet"
-          ? "/sheet/finance-sheet/next-number"
-          : "/sheet/buying-sheet/next-number"; // fallback default
+            ? "/sheet/selling-sheet/next-number"
+            : TypeOfSheet === "MeltingSheet"
+              ? "/sheet/melting-sheet/next-number"
+              : TypeOfSheet === "FinanceSheet"
+                ? "/sheet/finance-sheet/next-number"
+                : "/api/sheet/buying-sheet/next-number"; // fallback default
 
       console.log(endpoint, "endpoint");
       const res = await axiosInstance.get(endpoint);

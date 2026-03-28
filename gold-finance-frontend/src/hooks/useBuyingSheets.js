@@ -8,7 +8,7 @@ export const useBuyingSheets = () => {
 
   const fetchBuyingSheets = async () => {
     try {
-      const res = await axiosInstance.get("/sheet/buying-sheet");
+      const res = await axiosInstance.get("/api/sheet/buying-sheet");
       console.log(res.data, "use buying sheets data");
       setBuyingSheets(res.data);
       setError(null);

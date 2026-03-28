@@ -58,7 +58,7 @@ const MeltingSheet = () => {
     const fetchBuyingSheet = async () => {
       try {
         const res = await axiosInstance.get(
-          `/sheet/buying-sheet/${formData.buyingSheetId}` // use buyingSheetId here!
+          `/api/sheet/buying-sheet/${formData.buyingSheetId}`, // use buyingSheetId here!
         );
         const sheet = res.data;
         setSelectedBuyingSheet(sheet);

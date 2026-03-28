@@ -89,7 +89,7 @@ const BuyingSheet = () => {
 
     try {
       // Step 1: Submit the sheet
-      const res = await axiosInstance.post("/sheet/buying-sheet", payload, {
+      const res = await axiosInstance.post("/api/sheet/buying-sheet", payload, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

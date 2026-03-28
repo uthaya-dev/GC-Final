@@ -10,7 +10,7 @@
 //   useEffect(() => {
 //     const fetchSheets = async () => {
 //       try {
-//         const res = await axios.get("/sheet/buying-sheet");
+//         const res = await axios.get("/api/sheet/buying-sheet");
 //         setSheets(res.data);
 //       } catch (err) {
 //         console.error("Failed to fetch sheets:", err);

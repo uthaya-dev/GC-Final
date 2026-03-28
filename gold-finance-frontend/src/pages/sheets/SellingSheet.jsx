@@ -51,7 +51,7 @@ const SellingSheet = () => {
       if (!formData.buyingSheetId) return;
       try {
         const res = await axiosInstance.get(
-          `/sheet/buying-sheet/${formData.buyingSheetId}`,
+          `/api/sheet/buying-sheet/${formData.buyingSheetId}`,
         );
         setSelectedBuyingSheet(res.data);
       } catch (err) {
