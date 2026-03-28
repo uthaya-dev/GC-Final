@@ -122,7 +122,7 @@ export const forgotPassword = async (req, res) => {
       },
     });
 
-    const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+    const resetUrl = ` ${import.meta.env.VITE_API_BASE_URL}/reset-password/${resetToken}`;
 
     transporter.sendMail(
       {
@@ -141,7 +141,7 @@ export const forgotPassword = async (req, res) => {
           console.log("Email sent:", info.response);
           return res.json({ message: "Password reset email sent" });
         }
-      }
+      },
     );
   } catch (error) {
     console.error("Forgot password error:", error);

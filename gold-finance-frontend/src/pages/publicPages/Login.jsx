@@ -133,7 +133,7 @@ export default function Login() {
                 const tokenId = credentialResponse.credential;
 
                 const res = await fetch(
-                  "http://localhost:5000/api/auth/google-login",
+                  `${import.meta.env.VITE_API_BASE_URL}/api/auth/google-login`,
                   {
                     method: "POST",
                     headers: {

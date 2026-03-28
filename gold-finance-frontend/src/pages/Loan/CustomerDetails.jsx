@@ -63,7 +63,7 @@ const CustomerDetails = () => {
               <strong>Customer Photo:</strong>
             </div>
             <img
-              src={`http://localhost:5000/${singleLoan.images.customerPhoto}`}
+              src={`${import.meta.env.VITE_API_BASE_URL}/${singleLoan.images.customerPhoto}`}
               alt="Customer"
               className="w-32 h-32 object-cover rounded-lg shadow-sm"
             />

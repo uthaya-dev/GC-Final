@@ -16,18 +16,21 @@ export default function SignUp() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL}/api/auth/signup`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+            name: email.split("@")[0], // default name from email prefix
+            role: "employee",
+          }),
         },
-        body: JSON.stringify({
-          email,
-          password,
-          name: email.split("@")[0], // default name from email prefix
-          role: "employee",
-        }),
-      });
+      );
 
       const data = await response.json();
 
@@ -37,7 +40,7 @@ export default function SignUp() {
 
       showToast(
         "Registration successful! Wait for admin approval before login.",
-        "success"
+        "success",
       );
       navigate("/login");
     } catch (error) {
