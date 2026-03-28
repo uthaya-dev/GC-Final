@@ -8,7 +8,7 @@ export const useArticles = () => {
 
   const fetchArticles = async () => {
     try {
-      const res = await axiosInstance.get("/admin/config/jewellery");
+      const res = await axiosInstance.get("/api/admin/config/jewellery");
       setArticles(res.data);
     } catch (err) {
       console.error("Error fetching articles:", err);

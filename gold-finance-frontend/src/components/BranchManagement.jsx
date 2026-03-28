@@ -11,7 +11,7 @@ export default function BranchManagement({ onBranchesUpdated }) {
   const fetchBranches = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("/admin/config/branches");
+      const res = await axios.get("/api/admin/config/branches");
       setBranches(res.data);
       setError(null);
     } catch {
@@ -30,10 +30,10 @@ export default function BranchManagement({ onBranchesUpdated }) {
     try {
       if (editId) {
         // Update
-        await axios.put(`/admin/config/branches/${editId}`, form);
+        await axios.put(`/api/admin/config/branches/${editId}`, form);
       } else {
         // Create
-        await axios.post("/admin/config/branches", form);
+        await axios.post("/api/admin/config/branches", form);
       }
       setForm({ name: "", code: "", location: "" });
       setEditId(null);
@@ -56,7 +56,7 @@ export default function BranchManagement({ onBranchesUpdated }) {
   const handleDelete = async (id) => {
     if (confirm("Delete this branch?")) {
       try {
-        await axios.delete(`/admin/config/branches/${id}`);
+        await axios.delete(`/api/admin/config/branches/${id}`);
         fetchBranches();
         onBranchesUpdated?.();
       } catch {

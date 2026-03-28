@@ -13,10 +13,10 @@ export function useDashboardData() {
       setLoadingDashboardData(true);
       const [todayRatesRes, buyingRatesRes, balanceRes, closingBalanceRes] =
         await Promise.all([
-          axios.get("/admin/config/rates/today"),
-          axios.get("/admin/config/rates/buying"),
-          axios.get("/admin/config/opening-balance"),
-          axios.get("/admin/config/closing-balance"),
+          axios.get("/api/admin/config/rates/today"),
+          axios.get("/api/admin/config/rates/buying"),
+          axios.get("/api/admin/config/opening-balance"),
+          axios.get("/api/admin/config/closing-balance"),
         ]);
       console.log(todayRatesRes, "mm");
       setTodayRates(todayRatesRes.data);

@@ -8,7 +8,7 @@ export const useBranches = () => {
 
   const fetchBranches = async () => {
     try {
-      const res = await axiosInstance.get("/admin/config/branches");
+      const res = await axiosInstance.get("/api/admin/config/branches");
       setBranches(res.data);
     } catch (err) {
       console.error("Error fetching branches:", err);

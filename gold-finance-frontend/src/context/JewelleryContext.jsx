@@ -17,14 +17,14 @@ export const JewelleryProvider = ({ children }) => {
     const fetchConfig = async () => {
       try {
         const [jewelleryRes, rateRes] = await Promise.all([
-          axiosInstance.get("/admin/config/jewellery"),
-          axiosInstance.get("/admin/config/today-gold-loan-rate"),
+          axiosInstance.get("/api/admin/config/jewellery"),
+          axiosInstance.get("/api/admin/config/today-gold-loan-rate"),
         ]);
 
         setJewelleryOptions(
           Array.isArray(jewelleryRes.data)
             ? jewelleryRes.data.map((j) => j.jewelleryName)
-            : []
+            : [],
         );
         setRatePerGram(rateRes?.data?.ratePerGram ?? 6000);
       } catch (err) {

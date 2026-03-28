@@ -21,7 +21,7 @@ export default function OpeningBalanceForm({ onBalanceUpdated }) {
 
     setLoading(true);
     try {
-      await axios.post("/admin/config/opening-balance/add", {
+      await axios.post("/api/admin/config/opening-balance/add", {
         cash: Number(cash) || 0,
         goldGrams: Number(goldGrams) || 0,
       });

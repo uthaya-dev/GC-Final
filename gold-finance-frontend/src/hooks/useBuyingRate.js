@@ -9,7 +9,7 @@ export const useBuyingRate = (is916HM) => {
   useEffect(() => {
     const fetchRate = async () => {
       try {
-        const res = await axiosInstance.get("/admin/config/rates/buying");
+        const res = await axiosInstance.get("/api/admin/config/rates/buying");
         const newRate = is916HM ? res.data.gold22k916 : res.data.gold22k;
         setRate(newRate);
         setPurity(is916HM ? 916 : "");

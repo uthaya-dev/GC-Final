@@ -12,7 +12,7 @@ export default function JewelleryManagement({ onJewelleryUpdated }) {
   const fetchJewellery = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("/admin/config/jewellery");
+      const res = await axios.get("/api/admin/config/jewellery");
       setJewelleryList(res.data);
       setError(null);
     } catch {
@@ -31,10 +31,10 @@ export default function JewelleryManagement({ onJewelleryUpdated }) {
     try {
       if (editId) {
         // Update
-        await axios.put(`/admin/config/jewellery/${editId}`, form);
+        await axios.put(`/api/admin/config/jewellery/${editId}`, form);
       } else {
         // Create
-        await axios.post("/admin/config/jewellery/add", form);
+        await axios.post("/api/admin/config/jewellery/add", form);
       }
       setForm({ jewelleryName: "" });
       setEditId(null);
@@ -53,7 +53,7 @@ export default function JewelleryManagement({ onJewelleryUpdated }) {
   const handleDelete = async (id) => {
     if (confirm("Delete this jewellery type?")) {
       try {
-        await axios.delete(`/admin/config/jewellery/${id}`);
+        await axios.delete(`/api/admin/config/jewellery/${id}`);
         fetchJewellery();
         onJewelleryUpdated?.();
       } catch {

@@ -51,7 +51,7 @@ const SellingSheet = () => {
       if (!formData.buyingSheetId) return;
       try {
         const res = await axiosInstance.get(
-          `/sheet/buying-sheet/${formData.buyingSheetId}`
+          `/sheet/buying-sheet/${formData.buyingSheetId}`,
         );
         setSelectedBuyingSheet(res.data);
       } catch (err) {
@@ -96,7 +96,7 @@ const SellingSheet = () => {
   };
 
   const grossWeight = parseFloat(
-    selectedBuyingSheet?.goldDetails?.grossWeight || 0
+    selectedBuyingSheet?.goldDetails?.grossWeight || 0,
   );
   const articleId = selectedBuyingSheet?.articleId || "";
   const sellingRate = parseFloat(formData.sellingRate || 0);
@@ -114,7 +114,7 @@ const SellingSheet = () => {
       if (!articleId) return;
       try {
         const res = await axiosInstance.get(
-          `/admin/config/jewellery/${articleId?._id}`
+          `/api/admin/config/jewellery/${articleId?._id}`,
         );
         setArticleName(res.data.name);
       } catch (err) {

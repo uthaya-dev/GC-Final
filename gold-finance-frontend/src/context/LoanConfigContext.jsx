@@ -18,8 +18,8 @@ export const LoanConfigProvider = ({ children }) => {
     const fetchJewelleryAndRate = async () => {
       try {
         const [jewelleryRes, rateRes] = await Promise.all([
-          axiosInstance.get("/admin/config/jewellery"),
-          axiosInstance.get("/admin/config/today-gold-loan-rate"),
+          axiosInstance.get("/api/admin/config/jewellery"),
+          axiosInstance.get("/api/admin/config/today-gold-loan-rate"),
         ]);
 
         setJewelleryOptions(

@@ -34,9 +34,9 @@ export default function RateSetter() {
     setLoading(true);
     try {
       const [todayRes, buyingRes, loanRes, interestRes] = await Promise.all([
-        axios.get("/admin/config/rates/today"),
-        axios.get("/admin/config/rates/buying"),
-        axios.get("/admin/config/today-gold-loan-rate"),
+        axios.get("/api/admin/config/rates/today"),
+        axios.get("/api/admin/config/rates/buying"),
+        axios.get("/api/admin/config/today-gold-loan-rate"),
         axios.get("/api/admin/config/interest-rates"), // Fetch all interest rates
       ]);
 
@@ -75,7 +75,7 @@ export default function RateSetter() {
   const handleSaveToday = async () => {
     setSaving(true);
     try {
-      await axios.post("/admin/config/rates/today", todayRates);
+      await axios.post("/api/admin/config/rates/today", todayRates);
       setError(null);
       alert("Today's rates updated");
       refetch();
@@ -90,7 +90,7 @@ export default function RateSetter() {
   const handleSaveBuying = async () => {
     setSaving(true);
     try {
-      await axios.post("/admin/config/rates/buying", buyingRates);
+      await axios.post("/api/admin/config/rates/buying", buyingRates);
       setError(null);
       alert("Buying rates updated");
       refetch();
@@ -105,7 +105,7 @@ export default function RateSetter() {
   const handleSaveLoan = async () => {
     setSaving(true);
     try {
-      await axios.put("/admin/config/today-gold-loan-rate", loanRate);
+      await axios.put("/api/admin/config/today-gold-loan-rate", loanRate);
       setError(null);
       alert("Loan rate updated");
       refetch();

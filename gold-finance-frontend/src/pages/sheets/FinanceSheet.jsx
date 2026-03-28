@@ -34,7 +34,7 @@ const FinanceSheet = () => {
   useEffect(() => {
     const fetchInterest = async () => {
       try {
-        const res = await axiosInstance.get("/admin/config/interest-rate");
+        const res = await axiosInstance.get("/api/admin/config/interest-rate");
         if (res.data?.rate !== undefined) {
           setFormData((prev) => ({ ...prev, interest: res.data.rate }));
         }
