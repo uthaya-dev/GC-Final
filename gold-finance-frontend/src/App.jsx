@@ -43,7 +43,6 @@ import { PreviewProvider } from "./context/PreviewContext";
 function AppRoutes() {
   const { loading: authLoading } = useAuth();
   const [fakeLoading, setFakeLoading] = useState(true);
-  alert(1);
   useEffect(() => {
     const timeout = setTimeout(() => setFakeLoading(false), 500);
     return () => clearTimeout(timeout);

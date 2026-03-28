@@ -14,7 +14,6 @@ export default function PreviewModal({ onClose }) {
   console.log(previewData, "pppppppp");
 
   const handlePrintCustomer = () => {
-    alert(1);
     printJS({
       printable: "customer-print",
       type: "html",

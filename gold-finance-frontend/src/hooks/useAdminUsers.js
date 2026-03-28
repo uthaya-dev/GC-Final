@@ -13,11 +13,11 @@ export function useAdminUsers() {
     try {
       setLoading(true);
       const [pendingRes, managersRes, employeesRes] = await Promise.all([
-        axios.get("/admin/users", { params: { status: "pending" } }),
-        axios.get("/admin/users", {
+        axios.get("/api/admin/users", { params: { status: "pending" } }),
+        axios.get("/api/admin/users", {
           params: { role: "manager", status: "approved" },
         }),
-        axios.get("/admin/users", {
+        axios.get("/api/admin/users", {
           params: { role: "employee", status: "approved" },
         }),
       ]);
