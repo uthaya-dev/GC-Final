@@ -14,7 +14,7 @@ export default function LatestSubmittedSheets({ role, sheetType }) {
     const fetchSheets = async () => {
       setLoading(true);
       try {
-        const endpoint = `/sheet/${sheetType}-sheet`;
+        const endpoint = `/api/sheet/${sheetType}-sheet`;
         const res = await axios.get(endpoint);
         const latestThree = Array.isArray(res.data) ? res.data.slice(0, 3) : [];
         if (mounted) setSheets(latestThree);
