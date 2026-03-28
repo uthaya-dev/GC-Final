@@ -10,7 +10,7 @@ export default function AllSheets({ sheetType, role = "admin" }) {
   useEffect(() => {
     const fetchSheets = async () => {
       try {
-        const res = await axios.get(`/sheet/${sheetType}-sheet`);
+        const res = await axios.get(`/api/sheet/${sheetType}-sheet`);
         setSheets(res.data);
       } catch (err) {
         console.error(`Failed to fetch ${sheetType} sheets:`, err);
