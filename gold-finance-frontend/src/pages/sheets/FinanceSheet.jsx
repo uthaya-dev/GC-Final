@@ -89,7 +89,7 @@ const FinanceSheet = () => {
         ...formData,
         createdBy: user?._id,
       };
-      await axiosInstance.post("/sheet/finance-sheet", payload);
+      await axiosInstance.post("/api/sheet/finance-sheet", payload);
       alert("Finance Sheet created successfully!");
       await refetch();
       navigate(`/${user?.role}`);
