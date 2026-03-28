@@ -64,7 +64,7 @@ export default function ExistingLoanTab() {
   useEffect(() => {
     const fetchLatestLoans = async () => {
       try {
-        const res = await axiosInstance.get("/loan/latest");
+        const res = await axiosInstance.get("/api/loan/latest");
         if (res.data.success) setLoans(res.data.loans);
       } catch (err) {
         console.error("Failed to fetch latest loans", err);

@@ -7,7 +7,7 @@ export default function UserList({ users, title, onActionComplete }) {
 
   const handleDelete = async (userId) => {
     try {
-      await axios.delete(`/admin/delete/${userId}`);
+      await axios.delete(`/api/admin/delete/${userId}`);
       showToast("User deleted successfully.");
       onActionComplete();
     } catch (err) {

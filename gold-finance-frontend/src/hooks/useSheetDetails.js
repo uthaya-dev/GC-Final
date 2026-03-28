@@ -14,7 +14,7 @@ export default function useSheetDetails(sheetType, id) {
       setError(null);
 
       try {
-        const res = await axios.get(`/sheet/${sheetType}-sheet/${id}`);
+        const res = await axios.get(`/api/sheet/${sheetType}-sheet/${id}`);
         setSheet(res.data);
       } catch (err) {
         setError(err);

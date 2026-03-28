@@ -49,7 +49,7 @@ export default function PreviewModal({ onClose }) {
       // pass previewData as formValues
       const formData = generateFormData(previewData);
 
-      const res = await axiosInstance.post("/loan/create-loan", formData, {
+      const res = await axiosInstance.post("/api/loan/create-loan", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

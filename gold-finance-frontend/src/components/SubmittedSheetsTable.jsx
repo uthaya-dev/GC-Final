@@ -44,7 +44,7 @@ const IndeterminateCheckbox = React.forwardRef(
     }, [resolvedRef, indeterminate]);
 
     return <input type="checkbox" ref={resolvedRef} {...rest} />;
-  }
+  },
 );
 
 export default function SubmittedSheetsTable({ data, sheetType }) {
@@ -99,7 +99,7 @@ export default function SubmittedSheetsTable({ data, sheetType }) {
         ),
       },
     ],
-    [navigate]
+    [navigate],
   );
 
   const defaultColumn = useMemo(() => ({ Filter: "" }), []);
@@ -150,7 +150,7 @@ export default function SubmittedSheetsTable({ data, sheetType }) {
         },
         ...columns,
       ]);
-    }
+    },
   );
 
   const { globalFilter, pageIndex, pageSize } = state;
@@ -165,7 +165,7 @@ export default function SubmittedSheetsTable({ data, sheetType }) {
       return;
 
     try {
-      await axios.post(`/sheet/${sheetType}-sheet/delete-selected`, {
+      await axios.post(`/api/sheet/${sheetType}-sheet/delete-selected`, {
         ids: selectedIds,
       });
       window.location.reload();
@@ -179,7 +179,7 @@ export default function SubmittedSheetsTable({ data, sheetType }) {
     if (!window.confirm("Are you sure you want to delete ALL sheets?")) return;
 
     try {
-      await axios.delete(`/sheet/${sheetType}-sheet`);
+      await axios.delete(`/api/sheet/${sheetType}-sheet`);
       window.location.reload();
     } catch (err) {
       console.error("Failed to delete all sheets:", err);
@@ -220,7 +220,7 @@ export default function SubmittedSheetsTable({ data, sheetType }) {
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => {
                   const headerProps = column.getHeaderProps(
-                    column.getSortByToggleProps?.()
+                    column.getSortByToggleProps?.(),
                   );
                   const { key, ...rest } = headerProps;
 

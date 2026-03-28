@@ -19,9 +19,9 @@ export default function PendingApprovals({ users, onActionComplete }) {
 
     try {
       await axios.put(
-        `/admin/approve/${userId}`,
+        `/api/admin/approve/${userId}`,
         { role },
-        { headers: { "Content-Type": "application/json" } }
+        { headers: { "Content-Type": "application/json" } },
       );
       showToast("User approved successfully.");
       onActionComplete();
@@ -33,7 +33,7 @@ export default function PendingApprovals({ users, onActionComplete }) {
 
   const handleDelete = async (userId) => {
     try {
-      await axios.delete(`/admin/delete/${userId}`);
+      await axios.delete(`/api/admin/delete/${userId}`);
       showToast("User deleted successfully.");
       onActionComplete();
     } catch (err) {
