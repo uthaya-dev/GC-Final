@@ -152,7 +152,7 @@ export const LoanProvider = ({ children }) => {
     const fetchLoanInterest = async () => {
       try {
         const response = await axiosInstance.get(
-          "/admin/config/interest-rates"
+          "/api/admin/config/interest-rates",
         );
 
         setAllInterestRates(response.data);

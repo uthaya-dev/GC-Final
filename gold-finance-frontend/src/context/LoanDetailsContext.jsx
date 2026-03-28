@@ -32,13 +32,13 @@ export const LoanDetailsProvider = ({ children }) => {
   const [loanDate, setLoanDate] = useState(defaultLoanDate);
   const [loanPeriod, setLoanPeriod] = useState(defaultLoanPeriod);
   const [dueDate, setDueDate] = useState(() =>
-    calculateDueDate(defaultLoanDate, defaultLoanPeriod)
+    calculateDueDate(defaultLoanDate, defaultLoanPeriod),
   );
   const [noOfDays, setNoOfDays] = useState(() =>
     calculateDays(
       defaultLoanDate,
-      calculateDueDate(defaultLoanDate, defaultLoanPeriod)
-    )
+      calculateDueDate(defaultLoanDate, defaultLoanPeriod),
+    ),
   );
 
   // Single loan fetched data
@@ -76,8 +76,8 @@ export const LoanDetailsProvider = ({ children }) => {
     setNoOfDays(
       calculateDays(
         defaultLoanDate,
-        calculateDueDate(defaultLoanDate, defaultLoanPeriod)
-      )
+        calculateDueDate(defaultLoanDate, defaultLoanPeriod),
+      ),
     );
     setSelectedFactor(0);
     setTotalInterest(0);
@@ -168,7 +168,7 @@ export const LoanDetailsProvider = ({ children }) => {
         console.error("Error paying principal:", error);
       }
     },
-    []
+    [],
   );
 
   // Update due date and noOfDays when loanDate or loanPeriod changes
@@ -183,7 +183,7 @@ export const LoanDetailsProvider = ({ children }) => {
     if (noOfDays && loanAmount && selectedFactor) {
       const interest = noOfDays * loanAmount * selectedFactor;
       setTotalInterest(
-        Number.isFinite(interest) ? interest.toFixed(2) : "0.00"
+        Number.isFinite(interest) ? interest.toFixed(2) : "0.00",
       );
     } else {
       setTotalInterest("0.00");
@@ -195,7 +195,7 @@ export const LoanDetailsProvider = ({ children }) => {
     const fetchLoanInterest = async () => {
       try {
         const response = await axiosInstance.get(
-          "/admin/config/interest-rates"
+          "/api/admin/config/interest-rates",
         );
         setAllInterestRates(response.data);
 

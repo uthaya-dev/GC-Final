@@ -37,7 +37,7 @@ export default function RateSetter() {
         axios.get("/admin/config/rates/today"),
         axios.get("/admin/config/rates/buying"),
         axios.get("/admin/config/today-gold-loan-rate"),
-        axios.get("/admin/config/interest-rates"), // Fetch all interest rates
+        axios.get("/api/admin/config/interest-rates"), // Fetch all interest rates
       ]);
 
       setTodayRates(todayRes.data);
@@ -136,7 +136,7 @@ export default function RateSetter() {
         return;
       }
 
-      await axios.post("/admin/config/interest-rates", payload);
+      await axios.post("/api/admin/config/interest-rates", payload);
       setError(null);
       alert("Interest rate added");
       setInterestRate({ price: "", percentage: "", factor: "" });

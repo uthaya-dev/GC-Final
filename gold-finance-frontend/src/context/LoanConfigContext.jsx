@@ -25,7 +25,7 @@ export const LoanConfigProvider = ({ children }) => {
         setJewelleryOptions(
           Array.isArray(jewelleryRes.data)
             ? jewelleryRes.data.map((j) => j.jewelleryName)
-            : []
+            : [],
         );
         setRatePerGram(rateRes?.data?.ratePerGram ?? 5000);
       } catch (err) {
@@ -43,7 +43,7 @@ export const LoanConfigProvider = ({ children }) => {
     const fetchLoanInterest = async () => {
       try {
         const response = await axiosInstance.get(
-          "/admin/config/interest-rates"
+          "/api/admin/config/interest-rates",
         );
         setAllInterestRates(response.data);
         if (response.data.length > 0) {
@@ -73,7 +73,7 @@ export const LoanConfigProvider = ({ children }) => {
       configLoading,
       allInterestRates,
       selectedInterestRate,
-    ]
+    ],
   );
 
   return (
